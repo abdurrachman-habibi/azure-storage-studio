@@ -4,5 +4,16 @@
   "main": "main.js",
   "dependencies": {
     "azure-storage": "^0.4.4"
+  },
+  "devDependencies":{
+    "gulp": "",
+    "gulp-usemin": "",
+    "gulp-uglify": "",
+    "gulp-minify-css": "",
+    "gulp-rev": "",
+    "gulp-minify-html": "",
+    "gulp-angular-templatecache": "",
+    "gulp-inject": "",
+    "del": ""
   }
 }

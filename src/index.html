@@ -3,11 +3,34 @@
     <head>
         <title>Hello World!</title>
 
-        <script src="js/client.js"></script>
+        <script src="lib/js/angular.min.js"></script>
+        <script src="lib/js/angular-route.min.js"></script>
+        <script src="lib/js/angular-animate.min.js"></script>
+        <script src="lib/js/angular-aria.min.js"></script>
+        <script src="lib/js/angular-touch.min.js"></script>
+        <script src="lib/js/angular-material.min.js"></script>
+
+        <link rel="stylesheet" href="lib/css/angular-material.min.css">
+        <link rel="stylesheet" href="lib/css/font-awesome.min.css">
+
+        <link rel="stylesheet" href="lib/css/app.css">
     </head>
-    <body>
+    <body ng-app="azure" md-theme="default">
         <h1>Hello World!</h1>
-        <button onclick="client.buttonClick()">Test</button>
+
+        <div ng-include="'app/layout/shell.html'" class="page-container"></div>
+
+        <script src="app/app.js"></script>
+
+        <script src="app/common/app-start.service.js"></script>
+        <script src="app/common/routes.constant.js"></script>
+
+        <script src="app/common/blob-service.module.js"></script>
+
+        <script src="app/layout/shell.js"></script>
+
+        <script src="app/home/home.js"></script>
+
         <!--We are using io.js <script>document.write(process.version)</script>-->
         <!--and Electron <script>document.write(process.versions['electron'])</script>.-->
     </body>

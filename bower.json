@@ -1,0 +1,22 @@
+{
+  "name": "azure-storage-studio",
+  "version": "0.0.0",
+  "homepage": "https://github.com/abdurrachman-habibi/azure-storage-studio",
+  "authors": [
+    "Habibi <guilvee@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-material": "",
+    "angular-route": "",
+    "angular-touch": "",
+    "components-font-awesome": ""
+  }
+}
