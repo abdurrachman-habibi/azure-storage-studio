@@ -1,10 +1,21 @@
 <div ng-controller="ShellController as shell" layout="column" layout-fill style="height: 100vh;">
+    <div ng-class="!shell.isScrollingDown ? 'shown' : 'hidden'" class="page-container slide-up toolbar-placeholder">
+        <div layout-fill layout="column" style="height: 100%">
+            <div flex class="md-primary" layout="column" layout-align="center start">
+                <div class="md-toolbar-tools">
+                    <span layout-padding>Azure Storage Studio</span>
+                    <span flex></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="page-container">
         <md-content style="height: 100%" flex>
+            <div class="toolbar-placeholder">&nbsp;</div>
             <div style="position: relative;">
-                <div ng-view class="page-container"></div>
+                <div ng-view class="page-container view-animation"></div>
             </div>
         </md-content>
     </div>
-
 </div>
