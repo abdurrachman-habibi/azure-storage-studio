@@ -2,11 +2,11 @@
     var azure = require('azure-storage');
     var http = require('http');
 
-    function BlobService() {
+    function BlobService(account, key) {
         //process.env.AZURE_STORAGE_ACCOUNT
         //process.env.AZURE_STORAGE_ACCESS_KEY
 
-        //this.storageClient = azure.createBlobService(null);
+        //this.storageClient = azure.createBlobService(account, key);
         //this.tableName = "meals";
     }
 
