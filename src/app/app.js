@@ -1,6 +1,6 @@
 /// <reference path="../typings/angularjs/angular.d.ts"/>
 (function () {
-    var app = angular.module('azure', ['ngAnimate', 'ngTouch', 'ngMaterial', 'ngRoute']);
+    var app = angular.module('azure', ['ngAnimate', 'ngTouch', 'ngMaterial', 'ngRoute', 'LocalStorageModule']);
 
     app.run(['$location', '$rootScope', '$route', function ($location, $rootScope, $route) {
 

@@ -17,6 +17,7 @@
     "angular-material": "",
     "angular-route": "",
     "angular-touch": "",
-    "components-font-awesome": ""
+    "components-font-awesome": "",
+    "angular-local-storage": "~0.2.2"
   }
 }

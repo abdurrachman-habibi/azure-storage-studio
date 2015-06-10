@@ -1,5 +1,6 @@
 (function(){
-    var azure = require('azure-storage');
+    var Azure = require('azure-storage');
+    var Promise = require("bluebird");
 
     function AccountService(){
 
@@ -7,16 +8,27 @@
 
     AccountService.prototype = {
         validate: function(name, key){
-            try{
-                var storageClient = azure.createBlobService(name, key);
+            var deferred = Promise.defer();
 
-                return true;
+            try{
+                var blobService = Azure.createBlobService(name, key);
+
+                blobService.listContainersSegmented(null, null, function(error, result) {
+                    if(error){
+                        deferred.resolve(false);
+                    }
+                    else{
+                        deferred.resolve(true);
+                    }
+                });
             }
             catch(e){
-                return false;
+                deferred.resolve(false);
             }
+
+            return deferred.promise;
         }
-    }
+    };
 
     module.exports = AccountService;
 })();

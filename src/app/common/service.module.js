@@ -1,4 +1,4 @@
-(function(){
+(function () {
 
     function blobServiceModule($interval, $q) {
         var BlobService = require('./modules/blobService');
@@ -8,17 +8,16 @@
             get: get
         };
 
-        function get()
-        {
+        function get() {
             blobService.get();
         }
     }
 
     angular.module('azure').factory('blobServiceModule', blobServiceModule);
-    blobServiceModule.$inject=['$interval', '$q'];
+    blobServiceModule.$inject = ['$interval', '$q'];
 })();
 
-(function(){
+(function () {
     function accountServiceModule($interval, $q) {
         var AccountService = require('./modules/accountService');
         var accountService = new AccountService();
@@ -27,8 +26,7 @@
             validate: validate
         };
 
-        function validate(name, key)
-        {
+        function validate(name, key) {
             return accountService.validate(name, key);
         }
     }

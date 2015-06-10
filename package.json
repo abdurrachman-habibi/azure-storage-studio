@@ -3,9 +3,10 @@
   "version": "0.1.0",
   "main": "main.js",
   "dependencies": {
-    "azure-storage": "^0.4.4"
+    "azure-storage": "^0.4.4",
+    "bluebird": "^2.9.27"
   },
-  "devDependencies":{
+  "devDependencies": {
     "gulp": "",
     "gulp-usemin": "",
     "gulp-uglify": "",

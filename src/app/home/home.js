@@ -1,15 +1,34 @@
 /// <reference path="../../typings/angularjs/angular.d.ts"/>
 (function(){
     angular.module('azure').controller('HomeController', HomeController);
-    HomeController.$inject = ['$window', '$scope', 'accountServiceModule'];
+    HomeController.$inject = ['$window', '$scope', 'accountServiceModule', 'accountStorageService'];
     
-    function HomeController($window, $scope, accountServiceModule){
+    function HomeController($window, $scope, accountServiceModule, accountStorageService){
         var vm = this;
+        vm.account = accountStorageService.load();
+
+        vm.accountName = 'givememymeal';
+        vm.accountKey = '';
 
         vm.addAccount = function(){
-            var result = accountServiceModule.validate(vm.accountName, vm.accountKey);
+            accountServiceModule.validate(vm.accountName, vm.accountKey).then(function(result){
+                if(result){
+                    accountStorageService.update(vm.accountName, vm.accountKey);
+                    vm.account = accountStorageService.load();
+                }
+                else{
+                    alert('Invalid!');
+                }
+            });
+        };
 
-            console.log(result);
-        }
+        vm.updateAccount = function(){
+
+        };
+
+        vm.removeAccount = function(){
+            accountStorageService.remove(vm.selectedAccount);
+            vm.account = accountStorageService.load();
+        };
     }
 })();
