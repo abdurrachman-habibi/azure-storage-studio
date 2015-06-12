@@ -1,21 +1,45 @@
 <div ng-controller="ShellController as shell" layout="column" layout-fill style="height: 100vh;">
-    <div ng-class="!shell.isScrollingDown ? 'shown' : 'hidden'" class="page-container slide-up toolbar-placeholder">
-        <div layout-fill layout="column" style="height: 100%">
-            <div flex class="md-primary" layout="column" layout-align="center start">
+    <md-toolbar flex="10" md-scroll-shrink layout-align="center center">
+        <div class="md-toolbar-tools" layout-align="center center">
+            <h3>
+                <span>Azure Storage Studio</span>
+            </h3>
+        </div>
+    </md-toolbar>
+    <md-content flex="90" layout="row">
+        <md-sidenav md-component-id="left" md-is-locked-open="true" class="md-sidenav-left md-whiteframe-z2">
+            <div flex="10" class="md-primary" style="height: 10%">
                 <div class="md-toolbar-tools">
-                    <span layout-padding>Azure Storage Studio</span>
-                    <span flex></span>
+
                 </div>
             </div>
-        </div>
-    </div>
-
-    <div class="page-container">
-        <md-content style="height: 100%" flex>
-            <div class="toolbar-placeholder">&nbsp;</div>
-            <div style="position: relative;">
-                <div ng-view class="page-container view-animation"></div>
-            </div>
+            <md-content layout-padding>
+                asds
+            </md-content>
+        </md-sidenav>
+        <md-content flex>
+            <div ng-view class="view-animation"></div>
         </md-content>
-    </div>
+    </md-content>
+    <!--<div ng-class="!shell.isScrollingDown ? 'shown' : 'hidden'" class="page-container slide-up toolbar-placeholder">-->
+    <!--<div layout-fill layout="column" style="height: 100%">-->
+    <!--<div flex class="md-primary" layout="column" layout-align="center start">-->
+    <!--<div class="md-toolbar-tools">-->
+    <!--<span layout-padding>Azure Storage Studio</span>-->
+    <!--<span flex></span>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+
+    <!--<div class="page-container">-->
+    <!--<md-content style="height: 100%" flex>-->
+    <!--<div class="toolbar-placeholder">&nbsp;</div>-->
+    <!--<div style="position: relative;">-->
+    <!--<div ng-view class="page-container view-animation"></div>-->
+    <!--</div>-->
+    <!--</md-content>-->
+    <!--</div>-->
+
+
 </div>
