@@ -6,20 +6,8 @@
             </h3>
         </div>
     </md-toolbar>
-    <md-content flex="90" layout="row">
-        <md-sidenav md-component-id="left" md-is-locked-open="true" class="md-sidenav-left md-whiteframe-z2">
-            <div flex="10" class="md-primary" style="height: 10%">
-                <div class="md-toolbar-tools">
-
-                </div>
-            </div>
-            <md-content layout-padding>
-                asds
-            </md-content>
-        </md-sidenav>
-        <md-content flex>
-            <div ng-view class="view-animation"></div>
-        </md-content>
+    <md-content ng-view flex="90" layout="row" class="view-animation">
+        
     </md-content>
     <!--<div ng-class="!shell.isScrollingDown ? 'shown' : 'hidden'" class="page-container slide-up toolbar-placeholder">-->
     <!--<div layout-fill layout="column" style="height: 100%">-->

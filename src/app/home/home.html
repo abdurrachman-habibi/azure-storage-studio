@@ -1,15 +1,42 @@
-<div layout="column">
-    <!--<input type="text" ng-model="home.accountName" placeholder="Account Name">-->
-    <!--<input type="text" ng-model="home.accountKey" placeholder="Account Key">-->
-    <div flex="20">
-        <md-select ng-model="home.selectedAccount" placeholder="Select an Account">
-            <md-option ng-value="key" ng-repeat="(key, value) in home.account">{{ key }}</md-option>
-        </md-select>
-        <button ng-if="home.selectedAccount" ng-click="home.updateAccount()">Update Account</button>
-        <button ng-if="home.selectedAccount" ng-click="home.removeAccount()">Remove Account</button>
-        <button ng-click="home.addAccount()">Add Account</button>
-    </div>
-    <div flex="80">
+<md-sidenav md-component-id="left" md-is-locked-open="true" class="md-sidenav-left md-whiteframe-z2">
+    <div flex="10" class="md-primary" style="height: 10%">
+        <div class="md-toolbar-tools">
 
+        </div>
     </div>
-</div>
+    <md-content layout-padding>
+        <md-list>
+            <md-list-item ng-repeat="(accK, accV) in home.account">
+                <md-divider></md-divider>
+                <div>
+                    <p>{{ accK }}</p>
+                    <md-list>
+                        <md-list-item ng-repeat="(tpyeK, typeV) in home.storageType">
+                            <div>
+                                <p>{{ typeV }}</p>
+                            </div>
+                        </md-list-item>
+                    </md-list>
+                </div>
+            </md-list-item>
+            <md-button class="md-raised md-primary" ng-click="home.addAccount()">Add Account</md-button>
+        </md-list>
+    </md-content>
+</md-sidenav>
+<md-content flex>
+    <div layout="column">
+        <!--<input type="text" ng-model="home.accountName" placeholder="Account Name">-->
+        <!--<input type="text" ng-model="home.accountKey" placeholder="Account Key">-->
+        <div flex="20">
+            <md-select ng-model="home.selectedAccount" placeholder="Select an Account">
+                <md-option ng-value="key" ng-repeat="(key, value) in home.account">{{ key }}</md-option>
+            </md-select>
+            <button ng-if="home.selectedAccount" ng-click="home.updateAccount()">Update Account</button>
+            <button ng-if="home.selectedAccount" ng-click="home.removeAccount()">Remove Account</button>
+
+        </div>
+        <div flex="80">
+
+        </div>
+    </div>
+</md-content>

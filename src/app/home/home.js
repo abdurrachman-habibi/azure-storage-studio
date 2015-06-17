@@ -6,6 +6,11 @@
     function HomeController($window, $scope, accountServiceModule, accountStorageService){
         var vm = this;
         vm.account = accountStorageService.load();
+        vm.storageType = {
+            'table' : 'Table Storage',
+            'blob' : 'Blob Storage',
+            'file' : 'File Storage'
+        };
 
         vm.accountName = 'givememymeal';
         vm.accountKey = '';

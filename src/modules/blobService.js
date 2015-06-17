@@ -19,6 +19,10 @@
             });
         },
 
+        listBlobs: function(){
+            
+        },
+
         query: function(){
 
         },
