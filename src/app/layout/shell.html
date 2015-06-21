@@ -6,8 +6,47 @@
             </h3>
         </div>
     </md-toolbar>
-    <md-content ng-view flex="90" layout="row" class="view-animation">
-        
+    <md-content flex="90" layout="row">
+        <md-sidenav md-component-id="left" md-is-locked-open="true" class="md-sidenav-left md-whiteframe-z2">
+            <div flex="10" class="md-primary" style="height: 10%">
+                <div class="md-toolbar-tools">
+
+                </div>
+            </div>
+            <md-content layout-padding>
+                <md-list>
+                    <md-list-item ng-repeat="(accK, accV) in shell.account">
+                        <md-divider></md-divider>
+                        <div>
+                            <p>{{ accK }}</p>
+                            <md-list>
+                                <md-list-item ng-repeat="(typeK, typeV) in shell.storageType" ng-click="shell.navigateTo(typeK, accK)">
+                                    <div>
+                                        <p>{{ typeV }}</p>
+                                    </div>
+                                </md-list-item>
+                            </md-list>
+                        </div>
+                    </md-list-item>
+                    <md-button class="md-raised md-primary" ng-click="shell.addAccount()">Add Account</md-button>
+                </md-list>
+            </md-content>
+        </md-sidenav>
+        <md-content flex ng-view class="view-animation">
+            <!--<div layout="column">-->
+                <!--<div flex="20">-->
+                    <!--<md-select ng-model="home.selectedAccount" placeholder="Select an Account">-->
+                        <!--<md-option ng-value="key" ng-repeat="(key, value) in home.account">{{ key }}</md-option>-->
+                    <!--</md-select>-->
+                    <!--<button ng-if="home.selectedAccount" ng-click="home.updateAccount()">Update Account</button>-->
+                    <!--<button ng-if="home.selectedAccount" ng-click="home.removeAccount()">Remove Account</button>-->
+
+                <!--</div>-->
+                <!--<div flex="80">-->
+
+                <!--</div>-->
+            <!--</div>-->
+        </md-content>
     </md-content>
     <!--<div ng-class="!shell.isScrollingDown ? 'shown' : 'hidden'" class="page-container slide-up toolbar-placeholder">-->
     <!--<div layout-fill layout="column" style="height: 100%">-->

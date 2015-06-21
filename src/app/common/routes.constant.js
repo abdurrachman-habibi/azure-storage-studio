@@ -7,6 +7,13 @@
                 controller: 'HomeController',
                 controllerAs: 'home'
             }
+        },{
+            url: '/blob/:account',
+            configuration: {
+                templateUrl: 'app/blob/blob.html',
+                controller: 'BlobController',
+                controllerAs: 'blob'
+            }
         }
     ];
 

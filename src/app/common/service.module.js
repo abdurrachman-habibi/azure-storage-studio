@@ -2,14 +2,41 @@
 
     function blobServiceModule($interval, $q) {
         var BlobService = require('./modules/blobService');
-        var blobService = new BlobService();
+        var cache = {};
 
         return {
-            get: get
+            load: load
         };
 
-        function get() {
-            blobService.get();
+        function load(name, key){
+            if(!cache[name]){
+                cache[name] = new BlobService(name, key);
+            }
+
+            var blobService = cache[name];
+
+            return {
+                get: get,
+                listContainer: listContainer,
+                listBlobs: listBlobs,
+                download: download
+            };
+
+            function get() {
+                blobService.get();
+            }
+
+            function listContainer() {
+                return blobService.listContainer();
+            }
+
+            function listBlobs(container) {
+                return blobService.listBlobs(container);
+            }
+
+            function download(container, blob) {
+                return blobService.download(container, blob);
+            }
         }
     }
 

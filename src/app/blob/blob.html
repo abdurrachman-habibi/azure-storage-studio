@@ -1,0 +1,35 @@
+<md-tabs md-border-bottom md-autoselect>
+    <md-tab ng-repeat="container in blob.containers"
+            label="{{container.name}}">
+        <div layout-padding>
+            <md-grid-list
+                    md-cols="4"
+                    md-row-height="1:1" md-row-height="4:3"
+                    md-gutter="8px">
+                <md-grid-tile ng-repeat="item in container.items" style="background: #D01380">
+                    <div layout="column" ng-if="!item.isDownloaded" style="margin-bottom: 36px;">
+                        <div layout="row">
+                            <md-button ng-click="blob.preview(container.name, item)" class="button-48" aria-label="download">
+                                <md-icon md-svg-src="lib/asset/file_view_white.svg"></md-icon>
+                            </md-button>
+                            <md-button ng-click="blob.download(container.name, item)" class="button-48" aria-label="download">
+                                <md-icon md-svg-src="lib/asset/file_download_white.svg"></md-icon>
+                            </md-button>
+                        </div>
+                        <div layout="row">
+                            <md-button ng-click="blob.edit(container.name, item)" class="button-48" aria-label="download">
+                                <md-icon md-svg-src="lib/asset/file_edit_white.svg"></md-icon>
+                            </md-button>
+                            <md-button ng-click="blob.remove(container.name, item)" class="button-48" aria-label="download">
+                                <md-icon md-svg-src="lib/asset/file_delete_white.svg"></md-icon>
+                            </md-button>
+                        </div>
+                    </div>
+                    <img ng-if="item.isDownloaded" ng-src="{{item.base64}}" style="max-width: 100%; max-height: 100%"/>
+                    <md-grid-tile-footer><h4>{{item.name}}</h4></md-grid-tile-footer>
+                </md-grid-tile>
+            </md-grid-list>
+            <br/>
+        </div>
+    </md-tab>
+</md-tabs>
