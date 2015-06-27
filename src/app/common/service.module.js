@@ -2,6 +2,7 @@
 
     function blobServiceModule($interval, $q) {
         var BlobService = require('./modules/blobService');
+
         var cache = {};
 
         return {
@@ -59,4 +60,14 @@
     }
 
     angular.module('azure').factory('accountServiceModule', accountServiceModule);
+})();
+
+(function () {
+    function remoteServiceModule() {
+
+        var remote = require('remote');
+
+    }
+
+    angular.module('azure').factory('remoteServiceModule', remoteServiceModule);
 })();

@@ -40,7 +40,8 @@
         function preview(containerName, item) {
             blobService.download(containerName, item.name).then(function (result) {
                 item.isDownloaded = true;
-                item.base64 = 'data:image/png;base64,' + result;
+                item.base64Prefix = 'data:image/png;base64,';
+                item.base64 = result;
             });
         }
 
